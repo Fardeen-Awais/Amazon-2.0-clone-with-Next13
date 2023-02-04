@@ -1,0 +1,13 @@
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+.heading{
+  padding: 90px;
+  color: rgb(1, 21, 21);
+}
+#h2{
+color: red;
+}

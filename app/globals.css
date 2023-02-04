@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components{
+    .link{
+        @apply cursor-pointer ;  
+        /* With this syntax you can apply class on your custom component */
+    }
+}
