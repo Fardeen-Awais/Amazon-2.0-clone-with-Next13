@@ -1,4 +1,4 @@
-"use client"; // TODO : TypeError: createContext only works in Client Components. 
+"use client"; // TODO : TypeError: createContext only works in Client Components. By adding this we can use material icon 
 
 // Header Imports
 import React from "react";
@@ -6,16 +6,13 @@ import Image from "next/image";
 import SearchRoundedIcon from "@mui/icons-material/SearchRounded";
 import ShoppingCartRoundedIcon from "@mui/icons-material/ShoppingCartRounded";
 import MenuIcon from '@mui/icons-material/Menu';
-//
-
-
 
 
 function Header() {
   return (
     <header>
       {/* //* TopNav */}
-      <div className="flex items-center bg-amazon_blue p-4 flex-? pb-2">
+      <div className="flex items-center bg-amazon_blue p-4 flex-? pb-2"> 
         {/* Logo: We make sm:flex-grow-0 if you remove it logo will take its maximum width */}
         <div className="mt-2 flex items-center flex-grow sm:flex-grow-0">
           <Image
@@ -27,21 +24,24 @@ function Header() {
         </div>
         {/* Search: We make hidden in mobile and display flex in small screens we make flex-grow so search bar takes its maximum width */}
         <div className="hidden sm:flex bg-yellow-400 items-center hover:bg-yellow-300 mx-3 h-10 rounded-md flex-grow px-2">
-          <input
+
+          <input 
             className="p-4 h-full flex-grow flex-shrink rounded-l-m focus:outline-none"
             type="text"
             placeholder="Search Amazon"
-          />{" "}
-          {/* //*Important: input will grow maximum  */}
+          /> {/* //*Important: input will grow maximum  */}
+          
           <i className="cursor-pointer w-10 flex justify-center items-center">
             <SearchRoundedIcon />
           </i>
+
         </div>
+
         {/* RightSide:  */}
         <div className="text-yellow-50 flex items-center space-x-4 text-xs md:text-sm">
           {/* First div */}
           <div className="link">
-            {" "}
+      
             {/* //?Note that link is the custom utility class  */}
             <p>Hello fardeen</p>
             <p className="font-semibold ">Account & setting</p>

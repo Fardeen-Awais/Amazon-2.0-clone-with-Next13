@@ -7,7 +7,7 @@ function Banner() {
       <div className="flex items-center justify-center"> {/* We are making image normal instead of carousel 😗 */}
         <Image 
           src="https://links.papareact.com/gi1"
-          alt="Picture of the author"
+          alt="banner"
           width={1000}
           height={600}
         />
