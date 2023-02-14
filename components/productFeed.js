@@ -1,26 +1,28 @@
-import React from 'react'
-import { faker } from '@faker-js/faker';
-
+"use client"; 
+import React, { useState, useEffect } from 'react';
 
 function ProductFeed() {
-  let products = [] // Empty array
+  const [posts, setPosts] = useState([]);
 
-  for (let i = 0; i < 10; i++) {
-    let name  = faker.commerce.productName()
-    products.push(name) //* By using for loop we can push multiple products to the array and then further past this array
-  }
-  console.log(products)
+  useEffect(() => {
+    fetch("https://api.escuelajs.co/api/v1/products?offset=0&limit=10") // #0001 README
+      .then(response => response.json())
+      .then(data => setPosts(data))
+      .catch(error => console.error(error));
+  }, []);
 
   return (
     <div>
-      {products.map((product)=>(
-        <div>
-         <p>{product}</p>
-          <img src="https://source.unsplash.com/160x160/?ecommerce" alt=""/>
-         </div>
+      {posts.map(post => (
+        <div key={post.id}>
+          <p>{post.title}</p>
+          <p>{post.price}</p>
+          <p>{post.description}</p>
+          <img src="https://source.unsplash.com/160x160/?ecommerce" alt="" />
+        </div>
       ))}
     </div>
-  )
+  );
 }
 
-export default ProductFeed
+export default ProductFeed;
