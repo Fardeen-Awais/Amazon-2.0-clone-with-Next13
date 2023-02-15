@@ -4,7 +4,9 @@ This is my first project on NextJs13.
 
 In next 13, Start by editing the app/page.js to see any changes. There is no index.js as we can see in previous version of next 12
 
-# **Technology used** : Next 13, tailwindcss, fakestore api
+# **Technology used** :
+
+Next 13, tailwindcss, fakestore api
 
 # **Reference point in the code:**
 
