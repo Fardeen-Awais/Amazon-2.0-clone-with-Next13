@@ -16,7 +16,7 @@ function Header() {
         {/* Logo: We make sm:flex-grow-0 if you remove it logo will take its maximum width */}
         <div className="mt-2 flex items-center flex-grow sm:flex-grow-0">
           <Image
-            src="https://links.papareact.com/f90"
+            src="/amazon_PNG11.png"
             width={100}
             height={50}
             priority
