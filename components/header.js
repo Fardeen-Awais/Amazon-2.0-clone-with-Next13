@@ -45,12 +45,12 @@ function Header() {
       
             {/* //?Note that link is the custom utility class  */}
             <p>Hello fardeen</p>
-            <p className="font-semibold ">Account & setting</p>
+            <p className="font-semibold ">Account &amp; setting</p>
           </div>
           {/* Second div */}
           <div className="link ">
             <p>Return</p>
-            <p className="font-semibold ">& Orders</p>
+            <p className="font-semibold ">&amp; Orders</p>
           </div>
           {/* Third div */}
           <div className="link ">
@@ -71,13 +71,13 @@ function Header() {
           <MenuIcon/> 
         </span>
         <div className="navFill space-x-2 text-xs md:space-x-4 md:text-sm">
-          <a href="#">Today's Deals</a>
+          <a href="#">Today&apos;s Deals</a>
           <a href="#">Customer Service</a>
           <a href="#">Gift Cards</a>
           <a href="#">Register</a>
           <a href="#">Sell</a>
           <a className="hidden md:inline-flex" href="#">Gift Cards</a>
-          <a className="hidden md:inline-flex" href="#">Today's Deals</a>
+          <a className="hidden md:inline-flex" href="#">Today&apos;s Deals</a>
         </div>
       </div>
     </header>
