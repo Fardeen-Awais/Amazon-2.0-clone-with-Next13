@@ -20,6 +20,7 @@ function Header() {
             width={100}
             height={50}
             priority
+            alt="logo"
           />
         </div>
         {/* Search: We make hidden in mobile and display flex in small screens we make flex-grow so search bar takes its maximum width */}
