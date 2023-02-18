@@ -1,4 +1,4 @@
-# **Live preview of the website** :
+# **Live preview of the website** : amazon-2-0-clone-with-next13.vercel.app
 
 This is my first project on NextJs13.
 
