@@ -1,6 +1,4 @@
-# **Live preview of the website** : 
-
-amazon-2-0-clone-with-next13.vercel.app
+# **Live preview of the website** : https://amazon-2-0-clone-with-next13.vercel.app/
 
 This is my first project on NextJs13.
 
@@ -44,7 +42,7 @@ So, function getProducts() return product
 
 For accessing the api data, we can declare a variable and call the api function in it. So, we can access all the data.
 
-### **#0004**
+### 4️⃣ #0004
 
 1. We are slicing the amount of product from 0 to 4 and render it. You can see the products component detail in #0005.
 
@@ -54,11 +52,11 @@ After we add a banner.
 
 3. After at the end we render all the rest of the products.
 
-### 4️⃣ #0005
+### 5️⃣ #0005
 
 In this stage, we style each individual product item. Before styling it we props our products data to this particular component
 
-### 5️⃣ #0006
+### 6️⃣ #0006
 
 We are apply grid. Here we use a little trick : grid-flow-row-dense is used to use full of the width without wasting any further space.
 
