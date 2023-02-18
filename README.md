@@ -1,4 +1,6 @@
-# **Live preview of the website** : amazon-2-0-clone-with-next13.vercel.app
+# **Live preview of the website** : 
+
+amazon-2-0-clone-with-next13.vercel.app
 
 This is my first project on NextJs13.
 
@@ -12,7 +14,7 @@ Next 13, tailwindcss, fakestore api
 
 Further explaination of the comment will be show there with reference number 📃
 
-### 1️⃣ **#0001**:
+### 1️⃣ #0001:
 
 I'm personally stuck here for two days.
 
@@ -28,7 +30,7 @@ I personally don't understand the real problem is but now i can simply solve it 
 
 For more informaiton read data-fetchinng in next js 13 : https://beta.nextjs.org/docs/data-fetching/fundamentals
 
-### 2️⃣ **#0002**:
+### 2️⃣ #0002:
 
 I solve this problem of fetching. **The above comment will be removed in future commit.** As i mention above getServerSideProps is not available in next13. You need to make an async function that fetch some data from an api convert it into the json and console it.
 
@@ -38,7 +40,7 @@ So, function getProducts() return product
 
 <!-- //? So how we can Access the data of product in our component: Answer in #0003  -->
 
-### 3️⃣ **#0003**:
+### 3️⃣ #0003
 
 For accessing the api data, we can declare a variable and call the api function in it. So, we can access all the data.
 
@@ -52,11 +54,11 @@ After we add a banner.
 
 3. After at the end we render all the rest of the products.
 
-# **#0005**
+### 4️⃣ #0005
 
 In this stage, we style each individual product item. Before styling it we props our products data to this particular component
 
-# **#0006**
+### 5️⃣ #0006
 
 We are apply grid. Here we use a little trick : grid-flow-row-dense is used to use full of the width without wasting any further space.
 
