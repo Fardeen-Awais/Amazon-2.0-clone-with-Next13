@@ -1,5 +1,9 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+# *git command to see last 5 commits beautifully:
+
+# git log --pretty=format:"%C(auto)%h %Cgreen%ci %Cblue%cn%Creset%n%s%n" -n 5
+
 # dependencies
 /node_modules
 /.pnp
