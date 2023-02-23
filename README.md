@@ -1,4 +1,4 @@
-# **Live preview of the website** :
+# **Live preview of the website** : https://amazon-2-0-clone-with-next13.vercel.app/
 
 This is my first project on NextJs13.
 
@@ -13,6 +13,7 @@ Next 13, tailwindcss, fakestore api
 Further explaination of the comment will be show there with reference number 📃
 
 ### **#0001**:
+### 1️⃣ #0001:
 
 I'm personally stuck here for two days.
 
@@ -38,11 +39,11 @@ So, function getProducts() return product
 
 <!-- //? So how we can Access the data of product in our component: Answer in #0003  -->
 
-### 3️⃣ **#0003**:
+### 3️⃣ #0003
 
 For accessing the api data, we can declare a variable and call the api function in it. So, we can access all the data.
 
-### **#0004**
+### 4️⃣ #0004
 
 1. We are slicing the amount of product from 0 to 4 and render it. You can see the products component detail in #0005.
 
