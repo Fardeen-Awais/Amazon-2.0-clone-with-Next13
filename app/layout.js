@@ -1,15 +1,11 @@
+import Providers from "./providers"
+import './globals.css';
 
-import './globals.css'
-
-export default function RootLayout({ children }) {
+export default function RootLayout({ children }) { // #0008
   return (
     <html lang="en">
-      {/*
-        <head /> will contain the components returned by the nearest parent
-        head.js. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
-      */}
       <head />
-      <body>{children}</body>
+      <body><Providers>{children}</Providers></body>
     </html>
   )
 }

@@ -6,9 +6,12 @@ import Image from "next/image";
 import SearchRoundedIcon from "@mui/icons-material/SearchRounded";
 import ShoppingCartRoundedIcon from "@mui/icons-material/ShoppingCartRounded";
 import MenuIcon from '@mui/icons-material/Menu';
+import { signIn, signOut, useSession } from "next-auth/react";
 
 
 function Header() {
+  const { data: session } = useSession()
+
   return (
     <header>
       {/* //* TopNav */}
@@ -41,10 +44,9 @@ function Header() {
         {/* RightSide:  */}
         <div className="text-yellow-50 flex items-center space-x-4 text-xs md:text-sm">
           {/* First div */}
-          <div className="link">
-      
+          <div onClick={!session ? signIn : signOut} className="link">
             {/* //?Note that link is the custom utility class  */}
-            <p>Hello fardeen</p>
+            <p className="hover:underline">{session ? `Hello, ${session.user.name}`:'SignIn'}</p>
             <p className="font-semibold ">Account &amp; setting</p>
           </div>
           {/* Second div */}
