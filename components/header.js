@@ -10,7 +10,7 @@ import { signIn, signOut, useSession } from "next-auth/react";
 
 
 function Header() {
-  const { data: session } = useSession()
+  const { data: session } = useSession();
 
   return (
     <header>

@@ -12,10 +12,10 @@ export default async function Home() {
   const products = await getProducts(); //#0003
   return (
     <>
-      {/* Header */}
-      <Header />
       {/* Main */}
       <main className="max-w-screen-2xl mx-auto bg-gray-200">
+        {/* Header */}
+        <Header />
         {/* Part 01 : Banner */}
         <Banner />
         {/* Part 02 : Product */}
