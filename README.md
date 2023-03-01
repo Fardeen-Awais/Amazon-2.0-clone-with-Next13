@@ -133,3 +133,188 @@ The **SessionProvider** component is a higher-order component that provides a se
 The **Providers** component takes a single children prop, which represents the child components that will be wrapped by the **SessionProvider** component.
 
 The **Providers** component returns the **SessionProvider** component, passing the children prop as its child. This ensures that all child components of the **Providers** component have access to the session object provided by the **SessionProvider** component.
+
+### **0010**:
+
+What is Redux?
+
+Redux is like a treasure box. Inside the box, there are some things that everyone can use, like pencils and paper. But there are also some special things that only some people can use, like a crown or a magic wand.
+
+In Redux, the treasure box is called the store, and the things inside are called state. The state is like the information or data that everyone can access.
+
+But sometimes, there are special things that need to happen, like when someone wants to become a king or queen and wear the crown. In Redux, these special things are called actions. An action is like a request or command to change the state.
+
+To change the state, there are special people called reducers. Reducers are like the guards of the treasure box. They decide if the action is allowed or not, and if it is allowed, they make the changes to the state.
+
+So, let's say we have a game where we need to keep track of the player's score. The score is like a treasure inside the box. To change the score, we need to send an action to the reducers. The action might be called "ADD_POINTS" and it tells the reducers to add some points to the score. The reducers will check if the action is allowed and if it is, they will add the points to the score.
+
+And that's Redux in a nutshell! It's a way to keep track of information (state) and make changes to it (actions and reducers). It's like a treasure box that everyone can use, but only certain people can change it in special ways.
+
+### **0011**:
+
+How to Add Redux in our app:
+
+#### **Step1:** 
+
+#### First you need to install react redux and reduxjs/toolkit
+
+```javaScript
+yarn add @reduxjs/toolkit react-redux
+```
+
+##### Then i create store.js outside the app so i can access store.js thorougout application:
+
+```javaScript
+import { configureStore } from '@reduxjs/toolkit'
+import basketSlice from './slices/basketSlice'
+
+export default configureStore({
+  reducer: {
+    basket: basketSlice, // basketSlice is imported 
+  }
+})
+```
+
+##### Here is the basketSlice in the slices folder:
+
+```javaScript
+import { createSlice } from "@reduxjs/toolkit"; // we already install reduxjs/toolkit
+
+const initialState = {
+    items:[],
+};
+
+export const basketSlice = createSlice({
+    name: "basket", 
+    initialState,
+    reducers:{
+        // Actions
+        addToBasket:(state,action)=>{
+            state.items = [...state.items, action.payload]
+        },
+        removeFromBasket: (state,action)=>{},
+    }
+});
+
+export const {addToBasket,removeFromBasket} = basketSlice.actions;
+export const selectItems = (state)=> state.basket.items;
+
+export default basketSlice.reducer;
+
+```
+
+###### Explaintion of this code: 
+
+This code sets up a Redux slice using the createSlice function from the @reduxjs/toolkit library, which makes it easier to write Redux code with less boilerplate. Here's what each part of the code does:
+
+Import the createSlice function from the @reduxjs/toolkit library.
+
+```javaScript
+import { createSlice } from "@reduxjs/toolkit";
+```
+
+Define the initial state of the basket slice, which includes an empty items array.
+
+```javaScript
+const initialState = {
+  items: [],
+};
+```
+
+Use the createSlice function to define the basketSlice, which includes the name of the slice ("basket"), the initial state, and the reducers.
+
+```javaScript
+export const basketSlice = createSlice({
+  name: "basket",
+  initialState,
+  reducers: {
+    addToBasket: (state, action) => {
+      state.items = [...state.items, action.payload];
+    },
+    removeFromBasket: (state, action) => {},
+  },
+});
+
+```
+Define the addToBasket and removeFromBasket actions as part of the basketSlice reducer. The addToBasket action adds an item to the items array by creating a new array that includes the existing items and the new item from the action.payload. The removeFromBasket action is currently empty, but could be implemented later.
+
+```javaScript
+reducers: {
+  addToBasket: (state, action) => {
+    state.items = [...state.items, action.payload];
+  },
+  removeFromBasket: (state, action) => {},
+},
+```
+
+Export the addToBasket and removeFromBasket actions, as well as a selector function called selectItems that returns the items array from the basket slice.
+
+```javascript
+export const { addToBasket, removeFromBasket } = basketSlice.actions;
+export const selectItems = (state) => state.basket.items;
+```
+
+Finally, export the basketSlice reducer as the default export.
+
+```javascript
+export default basketSlice.reducer;
+```
+
+By following this pattern, you can create Redux slices with minimal boilerplate and easily define actions and selectors for your state. This makes it easier to maintain and update your Redux store over time.
+
+##### We use store in layout.js 
+
+We use provider so we can access store throughout the application. Same as we do when we use auth.
+
+```javaScript
+import Providers from "./providers"
+import './globals.css';
+import Store from "./provider";
+
+export default function RootLayout({ children }) { // #0008
+  return (
+    <html lang="en">
+      <head />
+      <body>
+        <Providers>
+        <Store> // We use store throughout our home page
+          {children}
+        </Store>
+        </Providers>
+        </body>
+    </html>
+  )
+}
+
+```
+
+This is our store in provider.js:
+
+```javascript
+'use client'
+import store from "@/store";
+import { Provider } from 'react-redux'
+
+export default function Store({children}){ //# 0009
+    return <Provider store={store}>{children}</Provider>
+}
+```
+
+### **0012**
+
+Let's use the redux in out product.js
+The explanation of product.js is given below:
+
+1. This code imports required modules and components such as React, Image from next/legacy/image, addToBasket from basketSlice, and useDispatch from react-redux.
+
+2. It defines a functional component called Product that accepts props such as id, title, rating, description, price, category, and image.
+
+3. Within the Product component, it initializes a constant dispatch using the useDispatch hook from react-redux.
+
+4. It defines a function addItemToBasket that creates a product object containing the id, title, description, category, and image of the product.
+
+5. It dispatches an action to add the product object to the Redux store using the addToBasket action from the basketSlice.
+
+6. The Product component returns a JSX element that renders the product information including an image, title, rating, description, price, and a button to add the product to the basket.
+
+7. When the user clicks on the "Add to Cart" button, the addItemToBasket function is called and it dispatches an action to add the product to the Redux store.
