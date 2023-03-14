@@ -14,7 +14,8 @@ import { selectItems } from "@/slices/basketSlice";
 
 function Header() {
   const { data: session } = useSession();
-  const items = useSelector(selectItems)
+  const items = useSelector(selectItems);
+ 
   return (
     <header>
       {/* //* TopNav */}
@@ -62,7 +63,6 @@ function Header() {
           {/* Third div */}
           <Link href={'./checkout'}>
           <div className="link ">
-           
             <span className="absolute top-3 right-3 text-center w-4 bg-yellow-300  rounded-full text-gray-900 font-semibold">
               {items.length}
             </span>
@@ -99,3 +99,4 @@ function Header() {
 }
 
 export default Header;
+

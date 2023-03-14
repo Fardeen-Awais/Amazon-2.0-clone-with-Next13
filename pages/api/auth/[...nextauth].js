@@ -9,7 +9,7 @@ export const authOptions = { // #0007
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-      callbackUrl: "https://amazon-2-0-clone-with-next13.vercel.app/api/auth/callback/google",
+      callbackUrl: "https://localhost:3000/api/auth/callback/google",
     })
   ]
 }
